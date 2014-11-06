@@ -10,8 +10,9 @@ class MainController < ApplicationController
     @user = User.new;
   end
 
-  def submit
-    # @user = User.new;
+  def save
+    redirect_to :action => :create
+    @user = User.new;
   end
   
 end
