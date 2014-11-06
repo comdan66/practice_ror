@@ -1,3 +1,28 @@
-<% @users.each do |user| %>
-<%=user.id%>. <%=user.name%> - <%=user.account%><br />
+<% if @users.count > 0 %>
+  <table>
+   <thead>
+    <tr>
+       <th>id</th>
+       <th>name</th>
+       <th>account</th>
+       <th>password</th>
+       <th>created_at</th>
+       <th>update_at</th>
+    </tr>
+   </thead>
+   <tbody>
+   <% @users.each do |user| %>
+        <tr>
+           <th><%= user.id %></th>
+           <th><%= user.name %></th>
+           <th><%= user.account %></th>
+           <th><%= user.password %></th>
+           <th><%= user.created_at %></th>
+           <th><%= user.update_at %></th>
+        </tr>
+   <% end %>
+   </tbody>
+  </table>
+<% else %>
+  <div>No any data.</div>
 <% end %>

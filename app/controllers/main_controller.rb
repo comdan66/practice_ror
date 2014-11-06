@@ -5,5 +5,13 @@ class MainController < ApplicationController
   def users
     @users = User.all;
   end
+
+  def create
+    @user = User.new;
+  end
+
+  def submit
+    # @user = User.new;
+  end
   
 end
