@@ -23,16 +23,22 @@ class MainController < ApplicationController
     # @user.save
 
     @user = User.create(params.require(:user).permit(:name, :account, :password));
-    if @user.save
-        redirect_to :action => :success
-    else
-        redirect_to :action => :failure
-    end
+    # if @user.save
+    redirect_to :action => :message, :string => @user.save ? "新增成功！" : "新增失敗！"
+    # else
+        # redirect_to :action => :failure
+    # end
 
   end
   
 
+  def message
+    @message = params;  
+  end
+  
   def success
+    # binding.pry
+
     @message = "新增成功！";
   end
   
