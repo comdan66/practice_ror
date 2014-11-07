@@ -8,6 +8,14 @@
 * 新增 controller `rails generate controller name`
 * `bundle install`
 
+## debug
+* Gemfile 加入 `gem 'pry'`、`gem 'pry-remote'` 這兩行，並且 bundle 一次。
+* 程式碼中埋入斷點 `binding.pry`，當網頁跑道斷點時 console 會進入 pry 模式。  
+![](./img/01.png =300x)
+	* 指令 `params` 可以看到傳入參數。  
+	![](./img/02.png =300x)
+
+
 
 ## 心得
 * 通常 key 都寫 	` :key`，冒號前面會有空格！
@@ -18,3 +26,8 @@
 
 ## Migration
 * 新增欄位 `rails g migration add_columnName_to_tabileName`
+
+
+## other
+* https://github.com/plataformatec/devise
+* 

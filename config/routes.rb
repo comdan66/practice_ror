@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get "/users" => "main#users"
   get "/create" => "main#create"
   post "/save" => "main#save"
+  get "/success" => "main#success"
+  get "/failure" => "main#failure"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
