@@ -1,16 +1,5 @@
 Rails.application.routes.draw do
-  get "/" => "main#index"
-  get "/list" => "main#list"
-  # get "/success" => "main#success"
-  # get "/failure" => "main#failure"
-  get "/message" => "main#message"
-  get "/delete" => "main#delete"
-
-  get "/create" => "main#create"
-  post "/create_submit" => "main#create_submit"
-
-  get "/update" => "main#update"
-  post "/update_submit" => "main#update_submit"
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

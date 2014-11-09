@@ -1,5 +1,6 @@
-<%= link_to 'Create', create_path%>
+<%= link_to '新增 user', new_user_path %>
 <hr/>
+
 <% if @users.count > 0 %>
   <table>
    <thead>
@@ -9,8 +10,9 @@
        <th>account</th>
        <th>password</th>
        <th>created_at</th>
-       <th>刪除</th>
-       <th>修改</th>
+       <th>show</th>
+       <th>edit</th>
+       <th>delete</th>
     </tr>
    </thead>
    <tbody>
@@ -21,8 +23,9 @@
            <th><%= user.account %></th>
            <th><%= user.password %></th>
            <th><%= user.created_at %></th>
-           <th><%= link_to '刪除', delete_path( :id => user.id) %></th>
-           <th><%= link_to '修改', update_path( :id => user.id) %></th>
+           <th><%= link_to 'show', user_path(user) %></th>
+           <th><%= link_to 'edit', edit_user_path(user) %></th>
+           <th><%= link_to 'delete', user_path(user), :method => :delete%></th>
         </tr>
    <% end %>
    </tbody>
