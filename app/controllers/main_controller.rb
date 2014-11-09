@@ -1,49 +1,44 @@
 class MainController < ApplicationController
   def index
+    # binding.pry
   end
 
-  def users
+  def list
     @users = User.all;
   end
 
   def create
     @user = User.new;
   end
-
-  def save
-    # binding.pry
-    # @user = User.new(params[:user])
-    # if @user.save
-    #     redirect_to :action => :success
-    # else
-    #     redirect_to :action => :failure
-    # end
-    
-    # @user = User.new(params.require(:user).permit(:name, :password, :password))
-    # @user.save
-
-    @user = User.create(params.require(:user).permit(:name, :account, :password));
-    # if @user.save
+  def create_submit
+    @user = User.create(create_user_params);
     redirect_to :action => :message, :string => @user.save ? "新增成功！" : "新增失敗！"
-    # else
-        # redirect_to :action => :failure
-    # end
+  end
 
+  def update
+    @user = User.find(params[ :id])
+  end
+  def update_submit
+    @user = User.find(params[ :id])
+    redirect_to :action => :message, :string => @user.update(update_user_params) ? "修改成功！" : "修改失敗！"
+  end
+
+  
+  def delete
+    @user = User.find(params[ :id])
+    redirect_to :action => :message, :string => @user.destroy ? "刪除成功！" : "刪除失敗！"
   end
   
-
   def message
-    @message = params;  
-  end
-  
-  def success
-    # binding.pry
-
-    @message = "新增成功！";
-  end
-  
-  def failure
-    @message = "新增失敗！";
+    @message = params[:string];  
   end
 
+  private
+
+  def update_user_params
+    params.require( :user).permit( :name, :account, :password)
+  end
+  def create_user_params
+    params.require( :user).permit( :name, :account, :password)
+  end
 end
