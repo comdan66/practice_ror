@@ -30,6 +30,7 @@ new_user_path    | /users/new (new)     |                 |                   |
 
 * 主要記憶格式: `[custom route]_user[s]_path( user ), :method => GET | POST | PUT | DELETE`
 * 特別注意 delete 時因為 link_to 或沒有在 JavaScript 下無法使用 delete method，所以推薦使用 button_to : `button_to 'delete', user_path(user), :method => :delete`
+* 若 ajax 的狀況，把 ajax 中的 option 設成 delete 或相對應的 http method 即可！
 
 ## debug
 * Gemfile 加入 `gem 'pry'`、`gem 'pry-remote'` 這兩行，並且 **bundle** 一次。
