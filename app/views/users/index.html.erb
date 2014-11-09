@@ -1,3 +1,6 @@
+<%= link_to '新增 user', new_user_path %>
+<hr/>
+
 <% if @users.count > 0 %>
   <table>
    <thead>
@@ -7,7 +10,9 @@
        <th>account</th>
        <th>password</th>
        <th>created_at</th>
-       <th>update_at</th>
+       <th>show</th>
+       <th>edit</th>
+       <th>delete</th>
     </tr>
    </thead>
    <tbody>
@@ -18,7 +23,9 @@
            <th><%= user.account %></th>
            <th><%= user.password %></th>
            <th><%= user.created_at %></th>
-           <th><%= user.update_at %></th>
+           <th><%= link_to 'show', user_path(user) %></th>
+           <th><%= link_to 'edit', edit_user_path(user) %></th>
+           <th><%= link_to 'delete', user_path(user), :method => :delete%></th>
         </tr>
    <% end %>
    </tbody>
