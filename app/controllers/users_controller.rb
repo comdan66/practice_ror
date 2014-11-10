@@ -27,13 +27,11 @@ class UsersController < ApplicationController
       redirect_to :action => :show, :id => @user
     else
       flash[:error] = @user.errors.full_messages
-      # @error_messages =  if @user.errors.any?
       render :action => :edit
     end
   end
 
   def destroy
-
     if @user.destroy
       flash[:notice] = 'User was successfully deleted'
     else
@@ -45,17 +43,19 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @jobs = Job.all
     @page_title = '新增使用者'
   end
 
   def edit
+    @jobs = Job.all
     @page_title = "編輯 #{@user.name} 的基本資料"
   end
 
   private
 
   def user_params
-    params.require( :user).permit( :name, :account, :password)
+    params.require( :user).permit( :name, :account, :password, :job_id)
   end
 
   def set_user
