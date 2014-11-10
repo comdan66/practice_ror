@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @page_title = '使用者列表'
   end
 
   def create
@@ -10,6 +11,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @page_title = @user.name + ' 的基本資料'
   end
 
   def update
@@ -26,10 +28,12 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @page_title = '新增使用者'
   end
 
   def edit
     @user = User.find(params[:id])
+    @page_title = '編輯' + @user.name + '的基本資料'
   end
 
   private
