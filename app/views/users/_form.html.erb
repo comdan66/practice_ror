@@ -8,10 +8,10 @@
 <%= f.label :password, "Password" %>
 <%= f.password_field :password %>
 
-<% if @user.errors.any? %>
+<% if @error_messages %>
   <ul>
-  <% @user.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
+  <% @error_messages.each do |messages| %>
+    <li><%= messages %></li>
   <% end %>
   </ul>
 <% end %>

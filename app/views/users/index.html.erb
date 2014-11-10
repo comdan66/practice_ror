@@ -1,7 +1,7 @@
 <%= link_to '新增 user', new_user_path %>
 <hr/>
 
-<% if @users.count > 0 %>
+<% if @users.any? %>
   <table>
    <thead>
     <tr>
