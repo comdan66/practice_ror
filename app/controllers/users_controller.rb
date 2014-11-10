@@ -7,8 +7,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to users_path
+    flash[:notice] = "user was successfully created"
+
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to :action => :index
+    else
+      render :action => :new
+    end
   end
 
   def show
@@ -16,11 +22,18 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user.update(user_params)
-    redirect_to user_path(@user)
+    flash[:notice] = "user was successfully updated"
+
+    if @user.update(user_params)
+      redirect_to :action => :show, :id => @user
+    else
+      render :action => :new
+    end
   end
 
   def destroy
+    flash[:alert] = "user was successfully deleted"
+    
     @user.destroy
     redirect_to users_path
   end
