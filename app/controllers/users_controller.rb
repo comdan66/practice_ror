@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, :only => [ :show, :edit, :update, :destroy]
+
   def index
     @users = User.all
     @page_title = '使用者列表'
@@ -10,18 +12,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @page_title = @user.name + ' 的基本資料'
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
   end
@@ -32,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
     @page_title = '編輯' + @user.name + '的基本資料'
   end
 
@@ -42,4 +40,7 @@ class UsersController < ApplicationController
     params.require( :user).permit( :name, :account, :password)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
