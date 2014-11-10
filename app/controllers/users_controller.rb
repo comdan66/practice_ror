@@ -3,17 +3,16 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    @page_title = "使用者列表"
+    @page_title = '使用者列表'
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "user was successfully created"
+      flash[:notice] = 'user was successfully created'
       redirect_to :action => :index
     else
-      flash[:error] = "Create user error"
-      @error_messages = @user.errors.full_messages if @user.errors.any?
+      flash[:error] = @user.errors.full_messages
       render :action => :new
     end
   end
@@ -24,11 +23,11 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      flash[:notice] = "user was successfully updated"
+      flash[:notice] = 'user was successfully updated'
       redirect_to :action => :show, :id => @user
     else
-      flash[:error] = "Update user error"
-      @error_messages = @user.errors.full_messages if @user.errors.any?
+      flash[:error] = @user.errors.full_messages
+      # @error_messages =  if @user.errors.any?
       render :action => :edit
     end
   end
@@ -36,9 +35,9 @@ class UsersController < ApplicationController
   def destroy
 
     if @user.destroy
-      flash[:notice] = "user was successfully deleted"
+      flash[:notice] = 'User was successfully deleted'
     else
-      flash[:error] = "Delete user error"
+      flash[:error] = 'Delete user error'
     end
 
     redirect_to users_path
@@ -46,7 +45,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @page_title = "新增使用者"
+    @page_title = '新增使用者'
   end
 
   def edit

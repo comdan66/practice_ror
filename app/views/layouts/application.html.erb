@@ -8,8 +8,14 @@
 </head>
 <body>
 
-<p style="color: green"><%= flash[:notice] %></p>
-<p style="color: red"><%= flash[:error] %></p>
+<p style="color: green">
+  <%= flash[:notice] %>
+</p>
+<p style="color: red">
+  <% flash[:error].present? && flash[:error].each do |e|%>
+  <%= e %><br/>
+  <% end %>
+</p>
 
 <%= yield %>
 
