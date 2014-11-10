@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141105094058) do
+ActiveRecord::Schema.define(version: 20141110155138) do
+
+  create_table "jobs", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "account"
@@ -19,6 +25,9 @@ ActiveRecord::Schema.define(version: 20141105094058) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "job_id"
   end
+
+  add_index "users", ["job_id"], name: "index_users_on_job_id"
 
 end
