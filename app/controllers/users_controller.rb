@@ -4,22 +4,22 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(create_user_params);
+    @user = User.create(user_params)
     redirect_to users_path
   end
 
   def show
-    @user = User.find(params[ :id])
+    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[ :id])
-    @user.update(update_user_params)
+    @user = User.find(params[:id])
+    @user.update(user_params)
     redirect_to user_path(@user)
   end
 
   def destroy
-    @user = User.find(params[ :id])
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to users_path
   end
@@ -29,15 +29,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[ :id])
+    @user = User.find(params[:id])
   end
 
   private
 
-  def create_user_params
-    params.require( :user).permit( :name, :account, :password)
-  end
-  def update_user_params
+  def user_params
     params.require( :user).permit( :name, :account, :password)
   end
 
