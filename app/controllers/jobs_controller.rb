@@ -2,7 +2,8 @@ class JobsController < ApplicationController
   before_action :set_job, only: [ :show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    # @jobs = Job.all
+    @jobs = Job.includes(:users).all
     @page_title = '職業列表'
   end
 

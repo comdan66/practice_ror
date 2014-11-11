@@ -7,6 +7,7 @@
 <%= f.label :password, "Password" %>
 <%= f.password_field :password %>
 <br />
-<%= f.select( :job_id, jobs.map { |job| [job.name, job.id] }) %>
+<%= f.label :job_id, "Job" %>
+<%= f.select( :job_id, jobs.map { |job| [job.name, job.id] }.insert(0, ['無', 0])) %>
 
 

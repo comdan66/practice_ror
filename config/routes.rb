@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'main' => 'main#index'
   resources :users
   resources :jobs
   # The priority is based upon order of creation: first created -> highest priority.

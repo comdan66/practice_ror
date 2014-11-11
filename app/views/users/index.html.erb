@@ -1,4 +1,6 @@
-<%= link_to '新增 user', new_user_path %>
+<%= link_to '回首頁', main_path %>
+|
+<%= link_to '新增使用者', new_user_path %>
 <hr/>
 
 <% if @users.present? %>
@@ -25,7 +27,7 @@
            <th><%= user.account %></th>
            <th><%= user.password %></th>
            <th><%= user.created_at %></th>
-           <th><%= user.job ? user.job.name : '無' %></th>
+           <th><%= user.job ? (link_to user.job.name, job_path(user.job)) : '無' %></th>
 
            <th><%= link_to 'show', user_path(user) %></th>
            <th><%= link_to 'edit', edit_user_path(user) %></th>

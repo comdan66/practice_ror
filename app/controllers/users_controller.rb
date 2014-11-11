@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [ :show, :edit, :update, :destroy]
+  before_action :set_jobs, only: [ :new, :create, :edit, :update]
 
   def index
-    @users = User.all
+    @users = User.includes(:job).all
     @page_title = '使用者列表'
   end
 
@@ -43,12 +44,10 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @jobs = Job.all
     @page_title = '新增使用者'
   end
 
   def edit
-    @jobs = Job.all
     @page_title = "編輯 #{@user.name} 的基本資料"
   end
 
@@ -60,5 +59,9 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_jobs
+    @jobs = Job.all
   end
 end

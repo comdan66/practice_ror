@@ -6,4 +6,27 @@ Job Create Time: <%= @job.created_at %>
 <br/>
 Job Update Time: <%= @job.updated_at %>
 <hr/>
+<% if @job.users.present? %>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>view</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @job.users.each do |user| %>
+            <tr>
+              <td><%= user.id %></td>
+              <td><%= user.name %></td>
+              <td><%= link_to 'view', user_path(user) %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% else %>
+  No any one.
+<% end %>
+<hr/>
 <%= link_to '回列表', jobs_path %>
