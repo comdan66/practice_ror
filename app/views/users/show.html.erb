@@ -6,6 +6,8 @@ User Account: <%= @user.account %>
 <br/>
 User Passowrd: <%= @user.password %>
 <br/>
+Job: <%= @user.job ? @user.job.name : '無' %>
+<br/>
 User Create Time: <%= @user.created_at %>
 <br/>
 User Update Time: <%= @user.updated_at %>

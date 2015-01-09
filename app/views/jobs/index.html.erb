@@ -1,0 +1,36 @@
+<%= link_to '回首頁', main_path %>
+|
+<%= link_to '新增職業', new_job_path %>
+<hr/>
+
+<% if @jobs.present? %>
+  <table>
+   <thead>
+    <tr>
+       <th>id</th>
+       <th>name</th>
+       <th>created_at</th>
+       <th>users</th>
+
+       <th>show</th>
+       <th>edit</th>
+       <th>delete</th>
+    </tr>
+   </thead>
+   <tbody>
+   <% @jobs.each do |job| %>
+        <tr>
+           <th><%= job.id %></th>
+           <th><%= job.name %></th>
+           <th><%= job.created_at %></th>
+           <th><%= job.users.present? ? job.users.map { |user| [user.name] }.join(', ') : '' %></th>
+           <th><%= link_to 'show', job_path(job) %></th>
+           <th><%= link_to 'edit', edit_job_path(job) %></th>
+           <th><%= link_to 'delete', job_path(job), :method => :delete%></th>
+        </tr>
+   <% end %>
+   </tbody>
+  </table>
+<% else %>
+  <div>No any data.</div>
+<% end %>
