@@ -32,4 +32,8 @@
 
 ## other
 * https://github.com/plataformatec/devise
-* 
+
+
+rails g model user account:string password:string name:string
+
+bin/rake db:migrate
