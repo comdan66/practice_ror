@@ -1,0 +1,13 @@
+<%= f.label :name, "Name" %>
+<%= f.text_field :name %>
+<br />
+<%= f.label :account, "Account" %>
+<%= f.text_field :account %>
+<br />
+<%= f.label :password, "Password" %>
+<%= f.password_field :password %>
+<br />
+<%= f.label :job_id, "Job" %>
+<%= f.select( :job_id, jobs.map { |job| [job.name, job.id] }.insert(0, ['無', 0])) %>
+
+

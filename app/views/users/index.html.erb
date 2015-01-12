@@ -1,41 +1,25 @@
-<%= link_to '回首頁', main_path %>
-|
-<%= link_to '新增使用者', new_user_path %>
-<hr/>
+<%= link_to '新增', new_user_path %>
 
-<% if @users.present? %>
-  <table>
-   <thead>
+<table>
+  <tr>
+    <td>id
+    </td>
+    <td>account
+    </td>
+    <td>name
+    </td>
+    <td>edit
+    </td>
+    <td>delete
+    </td>
+  </tr>
+  <% @users.each do |user| %>
     <tr>
-       <th>id</th>
-       <th>name</th>
-       <th>account</th>
-       <th>password</th>
-       <th>created_at</th>
-       <th>job</th>
-
-       <th>show</th>
-       <th>edit</th>
-       <th>delete</th>
+      <td><%= user.id %></td>
+      <td><%= user.account %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to '編輯', edit_user_path(user) %></td>
+      <td><%= link_to 'delete', user_path(user), :method => :delete%></td>
     </tr>
-   </thead>
-   <tbody>
-   <% @users.each do |user| %>
-        <tr>
-           <th><%= user.id %></th>
-           <th><%= user.name %></th>
-           <th><%= user.account %></th>
-           <th><%= user.password %></th>
-           <th><%= user.created_at %></th>
-           <th><%= user.job ? (link_to user.job.name, job_path(user.job)) : '無' %></th>
-
-           <th><%= link_to 'show', user_path(user) %></th>
-           <th><%= link_to 'edit', edit_user_path(user) %></th>
-           <th><%= link_to 'delete', user_path(user), :method => :delete%></th>
-        </tr>
-   <% end %>
-   </tbody>
-  </table>
-<% else %>
-  <div>No any data.</div>
-<% end %>
+  <% end %>
+</table>
