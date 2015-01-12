@@ -1,1 +1,25 @@
-Hello World!
+<%= link_to '新增', new_user_path %>
+
+<table>
+  <tr>
+    <td>id
+    </td>
+    <td>account
+    </td>
+    <td>name
+    </td>
+    <td>edit
+    </td>
+    <td>delete
+    </td>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.account %></td>
+      <td><%= user.name %></td>
+      <td><%= link_to '編輯', edit_user_path(user) %></td>
+      <td><%= link_to 'delete', user_path(user), :method => :delete%></td>
+    </tr>
+  <% end %>
+</table>
