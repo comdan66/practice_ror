@@ -10,6 +10,7 @@
 
 <br/> 
 
+* model `rails g model name`
 * model `rails g model user account:string password:string name:string`
 	* ex: `rails g model user account:string password:string name:string`
 
