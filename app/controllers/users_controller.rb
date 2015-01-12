@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @page_title = '使用者列表'
+      flash[:notice] = 'user was successfully created'
     @users = User.all
   end
 

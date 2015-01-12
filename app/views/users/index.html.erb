@@ -1,5 +1,9 @@
 <%= link_to '新增', new_user_path %>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
 <table>
   <tr>
     <td>id
