@@ -1,0 +1,6 @@
+= form_for @post do |f|
+  = render 'form', f: f
+  hr
+  = f.submit '新增'
+  ||
+  = link_to '回總文章列表', posts_path

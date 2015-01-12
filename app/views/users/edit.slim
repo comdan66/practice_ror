@@ -1,5 +1,6 @@
 = form_for @user do |f|
   = render 'form', f: f
   hr
-  = f.button '回列表', type: 'button', onClick: "window.location.assign ('#{@users_path}')"
-  = f.submit '更新'
+  = f.submit '新增'
+  ||
+  = link_to '回使用者列表', users_path

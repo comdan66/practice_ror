@@ -1,23 +1,29 @@
-= link_to '新增', new_user_path
+= link_to '文章總列表', posts_path
+||
+= link_to '新增使用者', new_user_path
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
 
+hr
+
 table
-  tr
-    td 編號
-    td 名稱
-    td 帳號
-    td 密碼
-    td 檢視
-    td 編輯
-    td 刪除
-  - @users.each do |user|
+  thead
     tr
-      td = user.id
-      td = user.name
-      td = user.account
-      td = user.password
-      td = link_to '內容', user_path(user)
-      td = link_to '編輯', edit_user_path(user)
-      td = link_to '刪除', user_path(user), :method => :delete
+      th 編號
+      th 名稱
+      th 帳號
+      th 文章數
+      th 檢視
+      th 編輯
+      th 刪除
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.id
+        td = user.name
+        td = user.account
+        td = user.posts.count
+        td = link_to '內容', user_path(user)
+        td = link_to '編輯', edit_user_path(user)
+        td = link_to '刪除', user_path(user), :method => :delete

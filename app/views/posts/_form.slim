@@ -1,0 +1,17 @@
+- flash.each do |key, msg|
+  = content_tag :div, msg, class: key
+
+= f.label :title, '標題'
+= f.text_field :title
+
+br
+br
+
+= f.label :user_id, '作者'
+= f.select( :user_id, User.all.map { |user| [user.name, user.id] }.insert(0, ['無', 0]))
+
+br
+br
+
+= f.label :content, '內容'
+= f.text_area :content

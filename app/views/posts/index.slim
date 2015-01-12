@@ -1,0 +1,25 @@
+= link_to '使用者列表', users_path
+||
+= link_to '新增', new_post_path
+
+- flash.each do |key, msg|
+  = content_tag :div, msg, class: key
+
+hr
+
+table
+  thead
+    tr
+      th 編號
+      th 作者
+      th 標題
+      th 編輯
+      th 刪除
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.id
+        td = post.user.name if post.user
+        td = post.title
+        td = link_to '編輯', edit_post_path(post)
+        td = link_to '刪除', post_path(post), :method => :delete
