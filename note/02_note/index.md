@@ -38,8 +38,17 @@ rails g model user account:string password:string name:string
 
 bin/rake db:migrate
 
+```
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, class: name %>
 <% end %>
 
 <%= content_tag :div, 'xxxx', class: 'sad', data: {a: 's'} %>
+```
+
+## 安裝 slim
+gem 'slim'
+gem 'slim-rails'
+gem 'redcarpet'
+bundle install
+
