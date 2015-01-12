@@ -1,0 +1,12 @@
+- flash.each do |key, msg|
+  = content_tag :div, msg, class: key
+
+= f.label :name, '名稱'
+= f.text_field :name
+
+= f.label :account, '帳號'
+= f.text_field :account
+
+= f.label :password, '密碼'
+= f.password_field :password
+
