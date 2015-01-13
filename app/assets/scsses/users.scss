@@ -1,0 +1,16 @@
+
+
+* {
+  vertical-align: top;
+
+  &, &:after, &:before {
+  }
+}
+
+.ddd {
+  border: 1px solid rgba(255, 0, 0, .3);
+
+  .vvv {
+    background-color: rgba(0, 0, 255, 0.2);
+  }
+}
