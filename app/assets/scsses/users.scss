@@ -1,16 +1,32 @@
 
+@import "_oa";
 
 * {
   vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
 
   &, &:after, &:before {
+    @include box-sizing(border-box);
   }
 }
-
-.ddd {
+.row {
+  position: relative;
+  display: inline-block;
+  width: 100%;
   border: 1px solid rgba(255, 0, 0, .3);
+  @include clearfix();
 
-  .vvv {
-    background-color: rgba(0, 0, 255, 0.2);
+  .title, .content {
+    position: relative;
+    display: inline-block;
+    float: left;
+    padding: 2px 10px;
+  }
+  .title {
+    width: 100px;
+  }
+  .content {
+    width: calc(100% - 100px);
   }
 }
