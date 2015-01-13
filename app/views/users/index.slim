@@ -1,6 +1,8 @@
 = link_to '文章總列表', posts_path
 ||
 = link_to '新增使用者', new_user_path
+||
+= link_to '新增文章', new_post_path
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
