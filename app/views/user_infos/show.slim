@@ -29,6 +29,12 @@ hr
         tr
           th 住址
           td = @user.info.address
+        tr
+          th 修改
+          td
+            = link_to '修改', edit_user_info_path(@user)
+            |/
+            = link_to '刪除', user_info_path(@user), :method => :delete
 - else
   .notice
    | 目前沒有

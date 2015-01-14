@@ -1,8 +1,8 @@
 class UserInfosController < ApplicationController
   before_action :find_user
+  before_action :find_info, only: [ :show, :edit, :update, :destroy]
 
   def show
-    @info = @user.info
   end
 
   def new
@@ -10,7 +10,7 @@ class UserInfosController < ApplicationController
   end
 
   def create
-    @info = @user.info.build( info_params )
+    @info = @user.build_info( info_params )
     if @info.save
       flash['notice'] = 'Success!'
       redirect_to :action => :show
@@ -21,11 +21,9 @@ class UserInfosController < ApplicationController
   end
 
   def edit
-    @info = @user.info
   end
 
   def update
-    @info = @user.info
 
     if @info.update( info_params )
       flash['notice'] = 'Success!'
@@ -37,7 +35,6 @@ class UserInfosController < ApplicationController
   end
 
   def destroy
-    @info = @user.info
     @info.destroy
 
     redirect_to :action => :show
@@ -50,6 +47,10 @@ class UserInfosController < ApplicationController
   end
 
   def info_params
-    params.require( :info).permit( :name)
+    params.require( :info).permit( :nickname, :address)
+  end
+
+  def find_info
+    @info = @user.info
   end
 end
