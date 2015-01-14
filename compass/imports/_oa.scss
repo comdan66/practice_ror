@@ -140,6 +140,9 @@ table.form {
           &:last-child {
             @include border-radius (0 $borderRadius 0 0);
           }
+          &:first-child {
+            @include border-radius ($borderRadius 0 0 0);
+          }
         }
       }
       &:not(:first-child) {
@@ -160,6 +163,9 @@ table.form {
           &:last-child {
             @include border-radius (0 0 $borderRadius 0);
           }
+          &:first-child {
+            @include border-radius (0 0 0 $borderRadius);
+          }
         }
       }
       th {
@@ -178,7 +184,9 @@ table.form {
         text-align: left;
         border: 1px solid rgba(39, 40, 34, .25);
         border-left: 0;
-
+        &:first-child {
+          border-left: 1px solid rgba(39, 40, 34, .25);
+        }
         textarea, input{
           width: 250px;
           padding: 5px;

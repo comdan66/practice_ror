@@ -6,7 +6,7 @@ class UserInfosController < ApplicationController
   end
 
   def new
-    @info = @user.info.build
+    @info = @user.build_info
   end
 
   def create

@@ -1,0 +1,36 @@
+.nav
+  = link_to '使用者列表', users_path()
+  ||
+  = link_to '新增(取代)進階資料', new_user_info_path()
+
+- flash.each do |key, msg|
+  = content_tag :div, msg, class: key
+
+table.form
+  tbody
+    tr
+      th 使用者名稱
+      td = @user.name
+    tr
+      th 使用者帳號
+      td = @user.account
+    tr
+      th 文章數
+      td = @user.posts.count
+
+hr
+
+- if @user.info
+    table.form
+      tbody
+        tr
+          th 暱稱
+          td = @user.info.nickname
+        tr
+          th 住址
+          td = @user.info.address
+- else
+  .notice
+   | 目前沒有
+   = @user.name
+   | 任何進階資料
