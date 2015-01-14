@@ -1,8 +1,4 @@
-= link_to '文章總列表', posts_path
-||
 = link_to '新增使用者', new_user_path
-||
-= link_to '新增文章', new_post_path
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
@@ -26,6 +22,6 @@ table
         td = user.name
         td = user.account
         td = user.posts.count
-        td = link_to '內容', user_path(user)
+        td = link_to '內容', user_posts_path(user)
         td = link_to '編輯', edit_user_path(user)
         td = link_to '刪除', user_path(user), :method => :delete

@@ -1,0 +1,6 @@
+= form_for @post, :url => user_posts_path(@user) do |f|
+  = render 'form', f: f
+  hr
+  = f.submit '新增'
+  ||
+  = link_to '回文章列表', user_posts_path

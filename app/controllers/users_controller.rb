@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :get_user, only: [ :edit, :update, :destroy, :show]
+  before_action :find_user, only: [ :edit, :update, :destroy, :show]
 
   def index
     @page_title = '使用者列表'
@@ -45,16 +45,13 @@ class UsersController < ApplicationController
       redirect_to :action => :index
   end
 
-  def show
-    @page_title = "#{@user.name} 的基本資料"
-  end
-
   private
 
   def user_params
     params.require( :user).permit( :name, :account, :password)
   end
-  def get_user
+
+  def find_user
     @user = User.find(params[:id])
   end
 end

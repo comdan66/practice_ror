@@ -1,0 +1,17 @@
+- flash.each do |key, msg|
+  = content_tag :div, msg, class: key
+
+= f.label :title, '標題'
+= f.text_field :title
+
+br
+br
+
+= f.label :user_name, '作者'
+= f.text_field :user_name, :value => @user.name, :readonly => true
+
+br
+br
+
+= f.label :content, '內容'
+= f.text_area :content
