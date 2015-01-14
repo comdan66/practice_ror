@@ -27,6 +27,7 @@ class UserPostsController < ApplicationController
   end
 
   def edit
+    @page_title = "編輯 #{@user.name} 的文章"
   end
 
   def update

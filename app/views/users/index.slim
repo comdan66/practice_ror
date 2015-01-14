@@ -1,11 +1,13 @@
-= link_to '新增使用者', new_user_path
+
+.nav
+  = link_to '新增使用者', new_user_path
+  ||
+  = link_to '新增使用者', new_user_path
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
 
-hr
-
-table
+table.list
   thead
     tr
       th 編號
@@ -15,6 +17,7 @@ table
       th 檢視
       th 編輯
       th 刪除
+      th 進階資料
   tbody
     - @users.each do |user|
       tr
@@ -25,3 +28,4 @@ table
         td = link_to '內容', user_posts_path(user)
         td = link_to '編輯', edit_user_path(user)
         td = link_to '刪除', user_path(user), :method => :delete
+        td = link_to '檢視', user_info_path(user)

@@ -1,36 +1,41 @@
-= link_to '使用者列表', users_path()
-||
-= link_to '新增文章', new_user_post_path()
+.nav
+  = link_to '使用者列表', users_path()
+  ||
+  = link_to '新增文章', new_user_post_path()
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
 
+table.form
+  tbody
+    tr
+      th 使用者名稱
+      td = @user.name
+    tr
+      th 使用者帳號
+      td = @user.account
+    tr
+      th 文章數
+      td = @user.posts.count
 hr
 
-.row
-  .title 使用者名稱
-  .content = @user.name
+table.list
+  thead
+    tr
+      th 編號
+      th 標題
+      th 內容
+      th 檢視
+      th 編輯
+      th 刪除
+  tbody
+    - @posts.each do |post|
+      tr
+        td = post.id
+        td = post.title
+        td = post.content
 
-.row
-  .title 使用者帳號
-  .content = @user.account
+        td = link_to '檢視', user_post_path(@user, post)
+        td = link_to '編輯', edit_user_post_path(@user, post)
+        td = link_to '刪除', user_post_path(@user, post), :method => :delete
 
-.row
-  .title 文章數
-  .content = @user.posts.count
-
-hr
-
-.posts
-  - @posts.each do |post|
-    .post
-      .user_name = post.user.name
-      .title = post.id
-      .title = post.title
-      .content = post.content
-      .control
-        = link_to '檢視', user_post_path(@user, post)
-        ||
-        = link_to '編輯', edit_user_post_path(@user, post)
-        ||
-        = link_to '刪除', user_post_path(@user, post), :method => :delete

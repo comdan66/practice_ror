@@ -5,7 +5,7 @@
 # Set this to the root of your project when deployed:
 # http_path = "/blog"
 css_dir = "../app/assets/stylesheets/"
-sass_dir = "../app/assets/scsses/"
+sass_dir = "./scsses/"
 fonts_dir = "../app/assets/fonts/"
 # fonts_path = "../font/"
 add_import_path = "./imports"

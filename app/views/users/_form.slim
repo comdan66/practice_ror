@@ -1,18 +1,11 @@
+table.form
+  tbody
+    tr
+      th = f.label :name, '名稱'
+      td = f.text_field :name
+    tr
+      th = f.label :account, '帳號'
+      td = f.text_field :account
+
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
-
-= f.label :name, '名稱'
-= f.text_field :name
-
-br
-br
-
-= f.label :account, '帳號'
-= f.text_field :account
-
-br
-br
-
-= f.label :password, '密碼'
-= f.password_field :password
-
