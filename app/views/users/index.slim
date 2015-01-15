@@ -12,6 +12,7 @@ table.list
       th 編號
       th 名稱
       th 帳號
+      th 技能
       th 文章數
       th 檢視
       th 編輯
@@ -23,6 +24,7 @@ table.list
         td = user.id
         td = user.name
         td = user.account
+        td = user.codes.map { |code| code.name }.join(", ") if user.codes
         td = user.posts.count
         td = link_to '內容', user_posts_path(user)
         td = link_to '編輯', edit_user_path(user)

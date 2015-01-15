@@ -187,7 +187,14 @@ table.form {
         &:first-child {
           border-left: 1px solid rgba(39, 40, 34, .25);
         }
-        textarea, input{
+        label {
+          & + label {
+            &:before {
+              content: ", ";
+            }
+          }
+        }
+        textarea, input[type='text'], input[type='password'], select {
           width: 250px;
           padding: 5px;
           border: 1px solid rgba(39, 40, 34, .25);
@@ -270,7 +277,14 @@ table.sub {
         &:first-child {
           border-left: 1px solid rgba(39, 40, 34, .25);
         }
-        textarea, input{
+        label {
+          & + label {
+            &:before {
+              content: ", ";
+            }
+          }
+        }
+        textarea, input[type='text'], input[type='password'], select {
           width: 250px;
           padding: 5px;
           border: 1px solid rgba(39, 40, 34, .25);
