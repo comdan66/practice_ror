@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     resources :posts, :controller => 'user_posts'
   end
 
-  resources :users do
-      resource :info, :controller => 'user_infos'
-  end
+  # resources :users do
+  #     resource :info, :controller => 'user_infos'
+  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

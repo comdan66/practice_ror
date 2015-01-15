@@ -1,0 +1,12 @@
+table.sub
+  tbody
+    tr
+      th = info_form.label :nickname, '暱稱'
+      td = info_form.text_field :nickname
+    tr
+      th = info_form.label :address, '住址'
+      td = info_form.text_field :address
+    - unless info_form.object.new_record?
+      tr
+        th = info_form.label :_destroy, '移除'
+        td = info_form.check_box :_destroy

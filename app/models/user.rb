@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_one :info
 
-  # delegate :name, :to => :nickname, :prefix => true, :allow_nil => true
+  accepts_nested_attributes_for :info, :allow_destroy => true, :reject_if => :all_blank
 end

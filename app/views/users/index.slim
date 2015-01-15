@@ -16,7 +16,7 @@ table.list
       th 檢視
       th 編輯
       th 刪除
-      th 進階資料
+      / th 進階資料
   tbody
     - @users.each do |user|
       tr
@@ -27,4 +27,4 @@ table.list
         td = link_to '內容', user_posts_path(user)
         td = link_to '編輯', edit_user_path(user)
         td = link_to '刪除', user_path(user), :method => :delete
-        td = link_to '檢視', user_info_path(user)
+        / td = link_to '檢視', user_info_path(user)
