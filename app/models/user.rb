@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_one :info
 
-  accepts_nested_attributes_for :info, :allow_destroy => true, :reject_if => :all_blank
+  accepts_nested_attributes_for :info, :allow_destroy => true, :reject_if => :all_blank, update_only: true
 end
