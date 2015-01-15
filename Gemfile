@@ -34,6 +34,7 @@ gem 'slim-rails'
 gem 'redcarpet'
 gem 'pry'
 gem 'pry-remote'
+gem "simple_form"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
