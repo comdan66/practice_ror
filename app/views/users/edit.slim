@@ -1,4 +1,4 @@
-= simple_form_for(setup_user(@user)) do |f|
+= form_for setup_user(@user) do |f|
   = render 'form', f: f
   .control
     = f.submit '編輯'

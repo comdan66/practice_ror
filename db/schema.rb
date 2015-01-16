@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115055313) do
+ActiveRecord::Schema.define(version: 20150116101803) do
 
   create_table "codes", force: true do |t|
     t.string   "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20150115055313) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "is_enabled"
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"

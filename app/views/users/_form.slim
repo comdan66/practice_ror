@@ -13,7 +13,8 @@ table.form
           = render 'info_form', info_form: info_form
     tr
       th = f.label :code_ids, '技能'
-      td = f.association :codes, :as => :check_boxes, label: false
+      td = f.collection_check_boxes(:code_ids, Code.all, :id, :name) do |b|
+        = b.label { b.check_box + b.text }
 
 - flash.each do |key, msg|
   = content_tag :div, msg, class: key
