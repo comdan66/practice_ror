@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   # resources :posts
 
   resources :users do
-    resources :posts, :controller => 'user_posts'
+    resources :posts, :controller => 'user_posts' do
+        post 'enable' => 'user_posts#enable'
+      end
   end
 
   # resources :users do

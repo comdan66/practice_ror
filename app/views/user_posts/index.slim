@@ -26,6 +26,7 @@ table.list
       th 編號
       th 標題
       th 內容
+      th 狀態
       th 檢視
       th 編輯
       th 刪除
@@ -35,6 +36,7 @@ table.list
         td = post.id
         td = post.title
         td = post.content
+        td = link_to post.open? ? '開啓' : '關閉', user_post_enable_path(@user, post), :method => :post
 
         td = link_to '檢視', user_post_path(@user, post)
         td = link_to '編輯', edit_user_post_path(@user, post)

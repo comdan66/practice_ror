@@ -45,6 +45,17 @@ class UserPostsController < ApplicationController
 
     redirect_to :action => :index
   end
+
+  def enable
+    @post = @user.posts.find( params[:post_id] )
+    if @post.closed?
+      @post.open!
+    else
+      @post.close!
+    end
+    redirect_to :back
+  end
+
   private
 
   def find_user
