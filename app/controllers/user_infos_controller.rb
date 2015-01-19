@@ -3,7 +3,6 @@ class UserInfosController < ApplicationController
   before_action :find_info, only: [ :show, :edit, :update, :destroy]
 
   def show
-
   end
 
   def new
