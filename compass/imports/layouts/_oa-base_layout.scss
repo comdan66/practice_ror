@@ -1,0 +1,47 @@
+
+@import "_oa";
+
+* {
+  vertical-align: top;
+  @include selection(rgba(150, 180, 230, 1.0000), rgba(237, 239, 244, 1.0000));
+  @include font-smoothing(antialiased);
+
+  &, &:after, &:before {
+    @include box-sizing(border-box);
+  }
+}
+
+a {
+  display: inline-block;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0);
+
+  color: rgba(42, 90, 149, 0.7);
+  font-weight: bold;
+  text-decoration: none;
+  @include transition(all .3s);
+
+  &:hover {
+    color: rgba(12, 65, 109, .95);
+    border-bottom: 1px solid rgba(12, 65, 109, .95);
+  }
+}
+
+html {
+  min-height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    min-width: 100%;
+    min-height: 100%;
+
+    font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+    font-size: 16px;
+    color: rgba(50, 50, 50, 0.7);
+
+    @include font-smoothing(antialiased);
+  }
+}

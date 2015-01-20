@@ -4,11 +4,11 @@
  */
 
 @mixin font-smoothing ($val: antialiased) {
-  -webkit-font-smoothing: $val;
-  -moz-font-smoothing: $val;
-  -ms-font-smoothing: $val;
-  -o-font-smoothing: $val;
   -moz-osx-font-smoothing: $val;
+   -webkit-font-smoothing: $val;
+      -moz-font-smoothing: $val;
+       -ms-font-smoothing: $val;
+        -o-font-smoothing: $val;
 }
 
 @mixin clearfix () {
@@ -22,22 +22,55 @@
   }
 }
 
+@mixin svg-color ($color: rgba(255, 255, 255, 1), $hoverColor: rgba(0, 0, 0, 1), $transition: all .3s) {
+  &, * {
+    color: $color;
+    fill: $color;
+    @include transition($transition);
+  }
+  &:hover {
+    &, * {
+      color: $hoverColor;
+      fill: $hoverColor;
+    }
+  }
+}
+@mixin split ($leftName: '.l', $rightName: '.r') {
+  @include clearfix();
+
+  #{$leftName}, #{$rightName} {
+    float: left;
+    position: relative;
+    display: inline-block;
+  }
+}
+@mixin split-left ($leftWidth: 100px, $leftName: '.l', $rightName: '.r') {
+  @include split($leftName, $rightName);
+
+  #{$leftName} {
+    width: $leftWidth;
+  }
+  #{$rightName} {
+    width: calc(100% - #{$leftWidth});
+  }
+}
+@mixin split-right ($rightWidth: 100px, $leftName: '.l', $rightName: '.r') {
+  @include split($leftName, $rightName);
+
+  #{$leftName} {
+    width: calc(100% - #{$rightWidth});
+  }
+  #{$rightName} {
+    width: $rightWidth;
+  }
+}
+
+
+
+
+
 @mixin overflow-docx3 () {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-@mixin white-space () {
-  white-space: pre-wrap; /* css-3 */
-  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-  white-space: -pre-wrap; /* Opera 4-6 */
-  white-space: -o-pre-wrap; /* Opera 7 */
-}
-
-@mixin overflow-break () {
-  overflow: hidden;
-  word-break: normal;
-  word-wrap: break-word;
-  @include white-space();
 }

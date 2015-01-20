@@ -1,0 +1,196 @@
+@charset "UTF-8";
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+* {
+  vertical-align: top;
+  -moz-osx-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+*::-moz-selection {
+  color: #edeff4;
+  background-color: #96b4e6;
+}
+*::selection {
+  color: #edeff4;
+  background-color: #96b4e6;
+}
+*, *:after, *:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a {
+  display: inline-block;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0);
+  color: rgba(42, 90, 149, 0.7);
+  font-weight: bold;
+  text-decoration: none;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:hover {
+  color: rgba(12, 65, 109, 0.95);
+  border-bottom: 1px solid rgba(12, 65, 109, 0.95);
+}
+
+html {
+  min-height: 100%;
+}
+html body {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+  font-size: 16px;
+  color: rgba(50, 50, 50, 0.7);
+  -moz-osx-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -ms-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+}
+
+html body #header {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: 99999;
+  width: 100%;
+  height: 32px;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px 0 10px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRiNGI0YiIgc3RvcC1vcGFjaXR5PSIwLjkiLz48c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iIzQxNDE0MSIgc3RvcC1vcGFjaXR5PSIwLjkiLz48c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iIzJkMmQyZCIgc3RvcC1vcGFjaXR5PSIwLjkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxZTFlMWUiIHN0b3Atb3BhY2l0eT0iMC45Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(75, 75, 75, 0.9)), color-stop(20%, rgba(65, 65, 65, 0.9)), color-stop(90%, rgba(45, 45, 45, 0.9)), color-stop(100%, rgba(30, 30, 30, 0.9)));
+  background-image: -moz-linear-gradient(top, rgba(75, 75, 75, 0.9) 0%, rgba(65, 65, 65, 0.9) 20%, rgba(45, 45, 45, 0.9) 90%, rgba(30, 30, 30, 0.9) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(75, 75, 75, 0.9) 0%, rgba(65, 65, 65, 0.9) 20%, rgba(45, 45, 45, 0.9) 90%, rgba(30, 30, 30, 0.9) 100%);
+  background-image: linear-gradient(to bottom, rgba(75, 75, 75, 0.9) 0%, rgba(65, 65, 65, 0.9) 20%, rgba(45, 45, 45, 0.9) 90%, rgba(30, 30, 30, 0.9) 100%);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+  opacity: 0.9;
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  *zoom: 1;
+}
+html body #header ~ #container {
+  margin-top: 40px;
+}
+html body #header:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14902);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+html body #header:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+html body #header .l, html body #header .r {
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+html body #header .l {
+  width: calc(100% - 150px);
+}
+html body #header .r {
+  width: 150px;
+}
+html body #header .l {
+  text-align: left;
+}
+html body #header .l svg {
+  cursor: pointer;
+  margin-right: 10px;
+}
+html body #header .l svg, html body #header .l svg * {
+  color: rgba(255, 255, 255, 0.8);
+  fill: rgba(255, 255, 255, 0.8);
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+html body #header .l svg:hover, html body #header .l svg:hover * {
+  color: white;
+  fill: white;
+}
+html body #header .r {
+  text-align: right;
+}
+html body #header .r a {
+  margin-top: 3px;
+  border-bottom: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+html body #header .r a:hover {
+  border-bottom: 0;
+  color: white;
+}
+
+.signin {
+  text-align: center;
+}
+.signin .container {
+  display: inline-block;
+  width: 480px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+.signin .container .row {
+  *zoom: 1;
+}
+.signin .container .row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+.signin .container .row .l, .signin .container .row .r {
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+.signin .container .row .l {
+  width: 150px;
+}
+.signin .container .row .r {
+  width: calc(100% - 150px);
+}
+.signin .container .row .l, .signin .container .row .r {
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}

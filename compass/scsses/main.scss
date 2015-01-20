@@ -1,0 +1,20 @@
+
+@import "_oa-layout_1";
+
+.signin {
+  text-align: center;
+
+  .container {
+    display: inline-block;
+    width: 480px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 0, 0, .3);
+
+    .row {
+      @include split-left(150px);
+      .l,.r{
+        border: 1px solid rgba(255, 0, 0, .3);
+      }
+    }
+  }
+}

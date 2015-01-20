@@ -4,18 +4,18 @@
 
 # Set this to the root of your project when deployed:
 # http_path = "/blog"
-css_dir = "../app/assets/stylesheets/"
+css_dir = "../mywall/app/assets/stylesheets/"
 sass_dir = "./scsses/"
-fonts_dir = "../app/assets/fonts/"
+fonts_dir = "../mywall/app/assets/fonts/"
 # fonts_path = "../font/"
 add_import_path = "./imports"
-additional_import_paths = ["./imports"]
+additional_import_paths = ["./imports", "./imports/layouts"]
 # images_dir = "images"
 # javascripts_dir = "javascripts"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
-output_style = :compressed
+output_style = :expanded
 
 # To enable relative paths to assets via compass helper functions. Uncomment:
 # relative_assets = true
