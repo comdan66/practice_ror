@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'main#index'
-  get 'signin' => 'main#signin'
+  get 'login' => 'main#login'
+  post 'signin' => 'main#signin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

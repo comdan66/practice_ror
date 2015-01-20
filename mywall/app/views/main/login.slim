@@ -1,0 +1,13 @@
+.login
+  .container
+    = form_for @user, :url => signin_path(@user, @post), :method => :post do |f|
+      .row.split
+        .l = f.label :account, '帳號'
+        .r = f.text_field :account, :placeholder => '請輸入你的帳號吧！'
+      .row.split
+        .l = f.label :account, '密碼'
+        .r = f.password_field :password, :placeholder => '請輸入你的密碼吧！'
+      .row.ctrl
+        .l 若未註冊，則會自動建立帳號。
+        .r
+          = f.submit '立馬登入', :class => 'oa-btn blue-btn'
