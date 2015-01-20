@@ -192,5 +192,12 @@ html body #header .r a:hover {
   width: calc(100% - 150px);
 }
 .signin .container .row .l, .signin .container .row .r {
+  padding: 5px;
   border: 1px solid rgba(255, 0, 0, 0.3);
+}
+.signin .container .row .l {
+  text-align: right;
+}
+.signin .container .row .r {
+  text-align: left;
 }
