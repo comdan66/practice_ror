@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'main#index'
   get 'login' => 'main#login'
-  post 'signin' => 'main#signin'
+  # post 'signin' => 'main#signin'
+
+  # devise_scope :users do
+  #   get "signin", to: "devise/sessions#new"
+  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
