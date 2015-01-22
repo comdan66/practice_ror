@@ -1,0 +1,36 @@
+
+@import "_oa";
+
+
+.login {
+  text-align: center;
+
+  .container {
+    display: inline-block;
+    width: 480px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    .row {
+      &.split {
+        margin-bottom: 20px;
+        padding-right: 40px;
+        border: 1px solid rgba(255, 0, 0, .3);
+      }
+
+      &.ctrl {
+        padding-top: 15px;
+        border-top: 1px solid rgba(95, 95, 95, .2);
+        @include split-right(150px);
+        .l, .r {
+        }
+        .l {
+            margin: 0;
+            padding: 5px;
+            color: rgba(49, 112, 143, 1);
+            @include border-radius (4px);
+        }
+      }
+    }
+  }
+}

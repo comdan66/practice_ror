@@ -1,0 +1,60 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2014 OA Wu Design
+ */
+.login {
+  text-align: center;
+}
+.login .container {
+  display: inline-block;
+  width: 480px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.login .container .row.split {
+  margin-bottom: 20px;
+  padding-right: 40px;
+  border: 1px solid rgba(255, 0, 0, 0.3);
+}
+.login .container .row.ctrl {
+  padding-top: 15px;
+  border-top: 1px solid rgba(95, 95, 95, 0.2);
+  *zoom: 1;
+}
+.login .container .row.ctrl:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+.login .container .row.ctrl .l, .login .container .row.ctrl .r {
+  float: left;
+  position: relative;
+  display: inline-block;
+}
+.login .container .row.ctrl .l {
+  width: calc(100% - 150px);
+}
+.login .container .row.ctrl .r {
+  width: 150px;
+}
+.login .container .row.ctrl .l {
+  margin: 0;
+  padding: 5px;
+  color: #31708f;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}

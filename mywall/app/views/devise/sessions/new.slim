@@ -1,15 +1,18 @@
-- content_for :head do
-  = stylesheet_link_tag 'theme/signup'
-
-h2 Log in
-
-= simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-
-  .form-actions
-    = f.button :submit, "Log in"
+.login
+  .container
+    = simple_form_for resource, as: resource_name, url: session_path(resource_name) do |f|
+      .row.split = f.input :email, required: false, autofocus: true
+      .row.split
+        .l = f.label :account, '密碼'
+        .r = f.input :password, required: false
+      .row.split
+        .l = f.label :account, '密碼'
+        .r = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+      .row.ctrl
+        .l 若未註冊，則會自動建立帳號。
+        .r
+          = f.button :submit, "Log in"
 
 = render "devise/shared/links"
+
+
