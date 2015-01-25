@@ -1,0 +1,11 @@
+.sign_up
+  .container
+    = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = f.input :email, required: true, autofocus: true, label: '信箱', placeholder: '請輸入你的電子郵件信箱吧！'
+      = f.input :password, required: true, label: '密碼', placeholder: @validatable ? "請輸入最少 #{@minimum_password_length} 個字元的密碼吧！" : '請輸入你的密碼吧！'
+      = f.input :password_confirmation, required: true, label: '確認密碼', placeholder: '請輸入你的密碼再確認一次吧！'
+      hr
+      = f.button :submit, "Sign up"
+    
+    = link_to "登入", new_session_path(resource_name)
+

@@ -3,6 +3,9 @@
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
 
+@import "functions/_oa-input";
+@import "functions/_oa-button";
+
 @mixin font-smoothing ($val: antialiased) {
   -moz-osx-font-smoothing: $val;
    -webkit-font-smoothing: $val;
@@ -64,10 +67,6 @@
     width: $rightWidth;
   }
 }
-
-
-
-
 
 @mixin overflow-docx3 () {
   overflow: hidden;

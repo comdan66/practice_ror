@@ -14,47 +14,55 @@
  * @author      OA Wu <comdan66@gmail.com>
  * @copyright   Copyright (c) 2014 OA Wu Design
  */
-.sign_in {
+.sign_up {
   text-align: center;
 }
-.sign_in .container {
+.sign_up .container {
   display: inline-block;
   width: 480px;
   margin: 0 auto;
   margin-top: 50px;
   text-align: right;
 }
-.sign_in .container div.user_email, .sign_in .container div.user_password {
+.sign_up .container div.user_email, .sign_up .container div.user_password, .sign_up .container div.user_password_confirmation {
   margin-top: 10px;
   *zoom: 1;
 }
-.sign_in .container div.user_email:after, .sign_in .container div.user_password:after {
+.sign_up .container div.user_email:after, .sign_up .container div.user_password:after, .sign_up .container div.user_password_confirmation:after {
   display: table;
   content: "";
   line-height: 0;
   clear: both;
 }
-.sign_in .container div.user_email label, .sign_in .container div.user_email input, .sign_in .container div.user_password label, .sign_in .container div.user_password input {
+.sign_up .container div.user_email label, .sign_up .container div.user_email input, .sign_up .container div.user_password label, .sign_up .container div.user_password input, .sign_up .container div.user_password_confirmation label, .sign_up .container div.user_password_confirmation input {
   float: left;
   position: relative;
   display: inline-block;
 }
-.sign_in .container div.user_email label, .sign_in .container div.user_password label {
-  width: 150px;
+.sign_up .container div.user_email label, .sign_up .container div.user_password label, .sign_up .container div.user_password_confirmation label {
+  width: 200px;
 }
-.sign_in .container div.user_email input, .sign_in .container div.user_password input {
-  width: calc(100% - 150px);
+.sign_up .container div.user_email input, .sign_up .container div.user_password input, .sign_up .container div.user_password_confirmation input {
+  width: calc(100% - 200px);
 }
-.sign_in .container div.user_email label, .sign_in .container div.user_email input, .sign_in .container div.user_password label, .sign_in .container div.user_password input {
+.sign_up .container div.user_email.field_with_errors input, .sign_up .container div.user_password.field_with_errors input, .sign_up .container div.user_password_confirmation.field_with_errors input {
+  border-color: #a94442;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+.sign_up .container div.user_email.field_with_errors input:focus, .sign_up .container div.user_password.field_with_errors input:focus, .sign_up .container div.user_password_confirmation.field_with_errors input:focus {
+  border-color: #843534;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #ce8483;
+}
+.sign_up .container div.user_email label, .sign_up .container div.user_email input, .sign_up .container div.user_password label, .sign_up .container div.user_password input, .sign_up .container div.user_password_confirmation label, .sign_up .container div.user_password_confirmation input {
   padding: 5px;
 }
-.sign_in .container div.user_email label, .sign_in .container div.user_password label {
+.sign_up .container div.user_email label, .sign_up .container div.user_password label, .sign_up .container div.user_password_confirmation label {
   text-align: right;
 }
-.sign_in .container div.user_email label:after, .sign_in .container div.user_password label:after {
+.sign_up .container div.user_email label:after, .sign_up .container div.user_password label:after, .sign_up .container div.user_password_confirmation label:after {
   content: ":";
 }
-.sign_in .container div.user_email input, .sign_in .container div.user_password input {
+.sign_up .container div.user_email input, .sign_up .container div.user_password input, .sign_up .container div.user_password_confirmation input {
   width: 250px;
   padding: 5px;
   border: 1px solid rgba(39, 40, 34, 0.25);
@@ -68,26 +76,38 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-.sign_in .container div.user_email input:focus, .sign_in .container div.user_password input:focus {
+.sign_up .container div.user_email input:focus, .sign_up .container div.user_password input:focus, .sign_up .container div.user_password_confirmation input:focus {
   outline: 0;
   border: 1px solid #66afe9;
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
-.sign_in .container div.user_remember_me {
+.sign_up .container div.user_email span, .sign_up .container div.user_password span, .sign_up .container div.user_password_confirmation span {
+  display: block;
+  width: calc(100% - 200px);
+  float: left;
+  margin-left: 200px;
+  text-align: left;
+  font-size: 10px;
+}
+.sign_up .container div.user_email span.error, .sign_up .container div.user_password span.error, .sign_up .container div.user_password_confirmation span.error {
+  font-size: 14px;
+  color: #a94442;
+}
+.sign_up .container div.user_remember_me {
   text-align: left;
   padding-left: 150px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
-.sign_in .container hr {
+.sign_up .container hr {
   margin-top: 20px;
   margin-bottom: 20px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
   opacity: 0.5;
 }
-.sign_in .container input.button {
+.sign_up .container input.button {
   border: 0 solid transparent;
   color: rgba(255, 255, 255, 0.85);
   padding: 2px 10px 4px 10px;
@@ -110,7 +130,7 @@
   transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background-color: #2196f3;
 }
-.sign_in .container input.button[disabled] {
+.sign_up .container input.button[disabled] {
   color: rgba(255, 255, 255, 0.75);
   cursor: not-allowed;
   text-shadow: none;
@@ -118,20 +138,20 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.sign_in .container input.button[disabled]:hover {
+.sign_up .container input.button[disabled]:hover {
   color: rgba(255, 255, 255, 0.75);
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
   text-shadow: none;
 }
-.sign_in .container input.button:hover {
+.sign_up .container input.button:hover {
   color: white;
   -moz-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.19);
   -webkit-box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.19);
   box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(255, 255, 255, 0.2), 0 10px 30px rgba(0, 0, 0, 0.19);
 }
-.sign_in .container input.button:active {
+.sign_up .container input.button:active {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.225);
   -webkit-box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.225);
@@ -141,26 +161,26 @@
   -webkit-transition: none;
   transition: none;
 }
-.sign_in .container input.button:focus {
+.sign_up .container input.button:focus {
   outline: 0;
 }
-.sign_in .container input.button:hover {
+.sign_up .container input.button:hover {
   background-color: #178ce9;
 }
-.sign_in .container input.button[disabled] {
+.sign_up .container input.button[disabled] {
   background-color: rgba(43, 160, 253, 0.85);
 }
-.sign_in .container div.other {
+.sign_up .container div.other {
   font-size: 14px;
   margin-top: 50px;
   text-align: center;
 }
-.sign_in .container div.other a {
+.sign_up .container div.other a {
   display: inline-block;
 }
-.sign_in .container div.other a:first-child {
+.sign_up .container div.other a:first-child {
   margin-right: 10px;
 }
-.sign_in .container div.other a:last-child {
+.sign_up .container div.other a:last-child {
   margin-left: 10px;
 }
