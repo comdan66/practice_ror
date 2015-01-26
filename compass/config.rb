@@ -9,7 +9,7 @@ sass_dir = "./scsses/"
 fonts_dir = "../mywall/app/assets/fonts/"
 # fonts_path = "../font/"
 add_import_path = "./imports"
-additional_import_paths = ["./imports", "./imports/functions"]
+additional_import_paths = ["./imports", "./imports/functions", "./imports/layouts"]
 # images_dir = "images"
 # javascripts_dir = "javascripts"
 
