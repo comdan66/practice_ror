@@ -1,3 +1,7 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
 
 @mixin button ($color: 'blue') {
   border: 0 solid transparent;
@@ -45,7 +49,14 @@
   &:focus {
     outline: 0;
   }
-  
+  &.active {
+    color: rgba(255, 255, 255, 1);
+
+    @include text-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
+    @include box-shadow(inset 2px 2px 12px rgba(0, 0, 0, 0.325));
+    @include transition(none);
+  }
+
   $btns: (
     'red':  (244, 67, 54, 1),
     'Pink':  (233, 30, 99, 1),

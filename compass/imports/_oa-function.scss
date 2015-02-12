@@ -1,10 +1,13 @@
 /**
  * @author      OA Wu <comdan66@gmail.com>
- * @copyright   Copyright (c) 2014 OA Wu Design
+ * @copyright   Copyright (c) 2015 OA Wu Design
  */
 
 @import "functions/_oa-input";
 @import "functions/_oa-button";
+@import "functions/_oa-hyperlink";
+@import "functions/_oa-alert";
+@import "functions/_oa-load";
 
 @mixin font-smoothing ($val: antialiased) {
   -moz-osx-font-smoothing: $val;
@@ -45,6 +48,9 @@
     float: left;
     position: relative;
     display: inline-block;
+  }
+  #{$rightName} {
+    float: right;
   }
 }
 @mixin split-left ($leftWidth: 100px, $leftName: '.l', $rightName: '.r') {
