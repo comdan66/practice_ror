@@ -1,0 +1,18 @@
+.sign_in
+  h2 登入
+
+  .notice = notice
+
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-inputs
+      = f.input :email, required: false, autofocus: true, label: '信箱', placeholder: '請輸入你的 email 吧！'
+      = f.input :password, required: false, label: '密碼', placeholder: '請輸入你的密碼吧！'
+      = f.input :remember_me, as: :boolean, label: '記住我' if devise_mapping.rememberable?
+
+    = content_tag(:div, alert, :class => 'alert') if alert
+    .form-actions
+      = f.button :submit, "登入"
+
+  .links
+    .link = link_to "立馬註冊一個！", new_registration_path(resource_name)
+    .link = link_to "忘記密碼了...", new_password_path(resource_name)

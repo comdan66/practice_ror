@@ -1,0 +1,90 @@
+/**
+ * @author      OA Wu <comdan66@gmail.com>
+ * @copyright   Copyright (c) 2015 OA Wu Design
+ */
+
+@import "_oa-layout_1";
+#container {
+  .sign_in {
+    display: inline-block;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 30px;
+    padding: 0 50px;
+
+    background-color: rgba(255, 255, 255, .3);
+    @include border-radius(3px);
+    @include box-shadow(0 4px 8px rgba(0,0,0,.175));
+
+    .form-inputs {
+      .input {
+        display: inline-block;
+        width: 100%;
+
+        &.user_email, &.user_password {
+          margin-bottom: 10px;
+          @include split-left(150px, 'label', 'input');
+
+          label {
+            padding: 7px;
+            text-align: right;
+
+            &:after {
+              content: " :";
+            }
+          }
+          input {
+            @include input();
+          }
+        }
+        &.user_remember_me {
+          text-align: left;
+          padding-left: 150px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+
+          label {
+            cursor: pointer;
+          }
+          input {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .alert {
+      @include alert();
+      margin-bottom: 10px;
+    }
+    .form-actions {
+      text-align: right;
+
+      .button {
+        @include button();
+      }
+    }
+    .links {
+      display: inline-block;
+      margin: 35px auto 25px auto;
+      @include clearfix();
+
+      .link {
+        float: left;
+        margin-right: 4px;
+
+        & + .link {
+          margin-right: 0;
+
+          &:before {
+            content: "|";
+          }
+        }
+
+        a {
+          font-size: 13px;
+          @include a();
+        }
+      }
+    }
+  }
+}
